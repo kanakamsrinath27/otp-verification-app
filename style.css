@@ -1,0 +1,168 @@
+/* Root Theme Colors */
+:root {
+  --bg-color: #f0f4f8;
+  --text-color: #333;
+  --box-bg: #ffffff;
+  --primary: #007bff;
+  --success: #28a745;
+  --danger: #dc3545;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f4f4f4;
+  --box-bg: #1f1f1f;
+  --primary: #4dabf7;
+  --success: #34d399;
+  --danger: #f87171;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+/* Toggle switch styling */
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 8px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+
+.otp-container {
+  background-color: var(--box-bg);
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.otp-box {
+  font-size: 28px;
+  letter-spacing: 12px;
+  font-weight: bold;
+  margin: 1em 0;
+  background-color: #f1f5f9;
+  padding: 10px;
+  border-radius: 8px;
+  color: black;
+}
+
+body.dark .otp-box {
+  background-color: #263238;
+  color: white;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 90%;
+  max-width: 260px;
+  font-size: 18px;
+  margin-top: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background: var(--box-bg);
+  color: var(--text-color);
+}
+
+button {
+  padding: 10px 24px;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.success {
+  color: var(--success);
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.error {
+  color: var(--danger);
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#timer {
+  margin-top: 15px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+@media screen and (max-width: 480px) {
+  .otp-container {
+    padding: 1em;
+  }
+  input[type="text"],
+  button {
+    width: 90%;
+  }
+}

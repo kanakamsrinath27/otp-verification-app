@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OTP Verification</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider"></span>
+    </label>
+    <span id="theme-label">☀️ Light Mode</span>
+  </div>
+
+  <div class="otp-container">
+    <h2>OTP Verification</h2>
+    <input type="text" id="name-input" placeholder="Enter your name" autocomplete="off" /><br />
+    <div id="otp-display" class="otp-box">----</div>
+    <button onclick="generateOTP()">Generate OTP</button><br />
+    <input type="text" id="user-otp" placeholder="Enter OTP" autocomplete="off" /><br />
+    <button onclick="verifyOTP()">Verify OTP</button>
+    <div id="timer"></div>
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
